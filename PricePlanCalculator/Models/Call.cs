@@ -7,12 +7,13 @@ namespace PricePlanCalculator.Models
 {
 	public abstract class Call
 	{
-		private GeoInformation GeoInformation { get; set; }
-
+		private readonly GeoInformation _geoInformation;
 		protected Call(GeoInformation geoInformation)
 		{
-			GeoInformation = geoInformation;
+			_geoInformation = geoInformation;
 		}
+
+		public bool IsLocal { get { return _geoInformation.IsLocal; } }
 	}
 
 	public class VoiceCall : Call
@@ -33,21 +34,6 @@ namespace PricePlanCalculator.Models
 	{
 		public TextCall(GeoInformation geoInformation) : base(geoInformation)
 		{
-		}
-	}
-
-	public interface IPricingStrategy<T> where T:Call
-	{
-		Price CalculatePrice(T call);
-	}
-
-	public class Price
-	{
-		public int Value { get; private set; }
-
-		public Price(int value)
-		{
-			Value = value;
 		}
 	}
 }

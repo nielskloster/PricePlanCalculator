@@ -47,8 +47,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BasicVoiceTaxationUT.cs" />
     <Compile Include="BootStrapTest.cs" />
+    <Compile Include="GeoInformationUT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PricePlanCalculator\PricePlanCalculator.csproj">
+      <Project>{63A920A0-E3CA-426B-AA76-172CBCB65A9A}</Project>
+      <Name>PricePlanCalculator</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
