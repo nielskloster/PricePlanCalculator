@@ -18,15 +18,21 @@ namespace PricePlanCalculator.Models
 
 	public class VoiceCall : Call
 	{
-		public VoiceCall(GeoInformation geoInformation) : base(geoInformation)
+		public TimeSpan Duration { get; private set; }
+
+		public VoiceCall(TimeSpan duration, GeoInformation geoInformation) : base(geoInformation)
 		{
+			Duration = duration;
 		}
 	}
 
 	public class DataCall : Call
 	{
-		public DataCall(GeoInformation geoInformation) : base(geoInformation)
+		public long BytesUsed { get; private set; }
+
+		public DataCall(long bytesUsed, GeoInformation geoInformation) : base(geoInformation)
 		{
+			BytesUsed = bytesUsed;
 		}
 	}
 

@@ -5,9 +5,9 @@ namespace PricePlanCalculator.Models
 		public Coutry From { get; set; }
 		public Coutry To { get; set; }
 
-		public GeoInformation(Coutry @from, Coutry to)
+		public GeoInformation(Coutry from, Coutry to)
 		{
-			From = @from;
+			From = from;
 			To = to;
 		}
 
