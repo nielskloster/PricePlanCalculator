@@ -17,8 +17,7 @@ namespace PricePlanCalculator.Test
 			var plan = VoicePlan.BilledPerMinute().Costing(4);
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
-				.Value
-				.Should().Be(6);
+				.Value.Should().Be(6);
 		}
 
 		[TestCase(0,1,0, 4)]
@@ -32,8 +31,7 @@ namespace PricePlanCalculator.Test
 			var plan = VoicePlan.BilledPerMinute().Costing(4);
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
-				.Value
-				.Should().Be(expectedPrice);
+				.Value.Should().Be(expectedPrice);
 		}
 
 		[TestCase(0, 0, 33, 4)]
@@ -47,8 +45,7 @@ namespace PricePlanCalculator.Test
 			var plan = VoicePlan.BilledPer30Seconds().Costing(4);
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
-				.Value
-				.Should().Be(expectedPrice);
+				.Value.Should().Be(expectedPrice);
 		}
 
 		[TestCase(0, 0, 33, 66)]
@@ -62,8 +59,7 @@ namespace PricePlanCalculator.Test
 			var plan = VoicePlan.BilledPerSecond().Costing(2);
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
-				.Value
-				.Should().Be(expectedPrice);
+				.Value.Should().Be(expectedPrice);
 		}
 	}
 }

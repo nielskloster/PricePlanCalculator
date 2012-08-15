@@ -27,20 +27,19 @@ namespace PricePlanCalculator.Models.Plans
 				_billingUnit = billingUnit;
 			}
 
-			public VoicePlan Costing(long pricePerUnit)
+			public VoicePlan Costing(int pricePerUnit)
 			{
-				return new VoicePlan(_billingUnit, pricePerUnit);
+				return new VoicePlan(_billingUnit, new Price(pricePerUnit));
 			}
 		}
 		#endregion
 		
 		public VoicePlanBillingUnit BillingUnit { get; private set; }
-		public long PricePerUnit { get; private set; }
 
-		private VoicePlan(VoicePlanBillingUnit billingUnit, long pricePerUnit)
+		private VoicePlan(VoicePlanBillingUnit billingUnit, Price pricePerUnit)
+			:base(pricePerUnit)
 		{
 			BillingUnit = billingUnit;
-			PricePerUnit = pricePerUnit;
 		}
 	}
 }

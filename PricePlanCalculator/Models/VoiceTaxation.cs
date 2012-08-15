@@ -8,19 +8,19 @@ namespace PricePlanCalculator.Models
 		public Price CalculatePrice(VoiceCall call, VoicePlan plan)
 		{
 			var additionalCharge = call.IsLocal ? 1 : 1.5;
-			return new Price((int) (CalculateBasicPrice(call, plan) * additionalCharge));
+			return additionalCharge * CalculateBasicPrice(call, plan);
 		}
 
-		private static int CalculateBasicPrice(VoiceCall call, VoicePlan plan)
+		private static Price CalculateBasicPrice(VoiceCall call, VoicePlan plan)
 		{
 			switch (plan.BillingUnit)
 			{
 				case VoicePlanBillingUnit.PerMinute:
-					return (int) ((int) call.Duration.TotalMinutes*plan.PricePerUnit);
+					return (int)call.Duration.TotalMinutes*plan.PricePerUnit;
 				case VoicePlanBillingUnit.Per30Seconds:
-					return (int) ((int) (call.Duration.TotalSeconds/30)*plan.PricePerUnit);
+					return (int)(call.Duration.TotalSeconds / 30) * plan.PricePerUnit;
 				case VoicePlanBillingUnit.PerSecond:
-					return (int) ((int) call.Duration.TotalSeconds*plan.PricePerUnit);
+					return (int)call.Duration.TotalSeconds*plan.PricePerUnit;
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
