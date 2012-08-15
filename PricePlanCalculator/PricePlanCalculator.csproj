@@ -133,8 +133,11 @@
     <Compile Include="Models\Coutry.cs" />
     <Compile Include="Models\GeoInformation.cs" />
     <Compile Include="Models\ITaxation.cs" />
+    <Compile Include="Models\Plans\Plan.cs" />
+    <Compile Include="Models\Plans\VoicePlanBillingUnit.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\SimpleVoiceTaxation.cs" />
+    <Compile Include="Models\Plans\VoicePlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
