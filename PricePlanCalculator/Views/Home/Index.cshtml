@@ -1,5 +1,11 @@
-﻿@{
+﻿@using PricePlanCalculator.Helpers
+@model PricePlanCalculator.ViewModels.PriceCalculationViewModel
+@{
     ViewBag.Title = "Home Page";
+}
+@section scripts
+{
+    <script src="@Url.Content("~/Scripts/index.js")" type="text/javascript"></script>
 }
 @section featured {
     <section class="featured">
@@ -9,14 +15,24 @@
                 <h2>@ViewBag.Message</h2>
             </hgroup>
             <p>
-                Calculate the cost of a call.
-            </p>
+				Calculate the cost of a call.
+                
+                @using (Html.BeginForm("CalculateCall", "Home"))
+                {
+                    @Html.EnumDropDownListFor(x => x.CallType)
+                    <input type="submit" value="OK" />
+                }
+			</p>
         </div>
     </section>
 }
-<h3>Result:</h3>
-<ol class="round">
+<h3>
+    Result:</h3>
+<div id="result">
+</div>
+@*<ol class="round">
     <li class="one">
-        <h5>None yet</h5>
+        <h5>
+            None yet</h5>
         ..</li>
-</ol>
+</ol>*@ 

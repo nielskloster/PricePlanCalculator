@@ -47,7 +47,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicVoiceTaxationUT.cs" />
+    <Compile Include="TextTaxationUT.cs" />
+    <Compile Include="VoiceTaxationUT.cs" />
     <Compile Include="BootStrapTest.cs" />
     <Compile Include="GeoInformationUT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
