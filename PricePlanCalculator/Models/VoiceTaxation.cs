@@ -3,7 +3,7 @@ using PricePlanCalculator.Models.Plans;
 
 namespace PricePlanCalculator.Models
 {
-	public class SimpleVoiceTaxation : ITaxation<VoiceCall, VoicePlan>
+	public class VoiceTaxation : ITaxation<VoiceCall, VoicePlan>
 	{
 		public Price CalculatePrice(VoiceCall call, VoicePlan plan)
 		{
@@ -18,7 +18,7 @@ namespace PricePlanCalculator.Models
 				case VoicePlanBillingUnit.PerMinute:
 					return (int) ((int) call.Duration.TotalMinutes*plan.PricePerUnit);
 				case VoicePlanBillingUnit.Per30Seconds:
-					return (int) ((int) call.Duration.TotalSeconds*plan.PricePerUnit);
+					return (int) ((int) (call.Duration.TotalSeconds/30)*plan.PricePerUnit);
 				case VoicePlanBillingUnit.PerSecond:
 					return (int) ((int) call.Duration.TotalSeconds*plan.PricePerUnit);
 				default:

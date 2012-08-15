@@ -18,10 +18,6 @@ namespace PricePlanCalculator.Models.Plans
 			return new VoicePlanIntermidate(VoicePlanBillingUnit.PerSecond);
 		}
 
-		private VoicePlan()
-		{
-		}
-
 		public class VoicePlanIntermidate
 		{
 			private readonly VoicePlanBillingUnit _billingUnit;
@@ -37,6 +33,7 @@ namespace PricePlanCalculator.Models.Plans
 			}
 		}
 		#endregion
+		
 		public VoicePlanBillingUnit BillingUnit { get; private set; }
 		public long PricePerUnit { get; private set; }
 
