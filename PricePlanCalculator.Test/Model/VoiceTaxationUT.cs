@@ -14,7 +14,7 @@ namespace PricePlanCalculator.Test.Model
 		public void LongDistance()
 		{
 			var call = new VoiceCall(new TimeSpan(0, 0, 1, 0), TestCalls.LongDiscanceCall);
-			var plan = VoicePlan.BilledPerMinute().Costing(4);
+			var plan = VoicePlan.Costing(4).BilledPerMinute();
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
 				.Value.Should().Be(6);
@@ -27,7 +27,7 @@ namespace PricePlanCalculator.Test.Model
 		public void BilledPerMinute(int hours, int minutes, int seconds, int expectedPrice)
 		{
 			var call = new VoiceCall(new TimeSpan(0, hours, minutes, seconds), TestCalls.LocalCall);
-			var plan = VoicePlan.BilledPerMinute().Costing(4);
+			var plan = VoicePlan.Costing(4).BilledPerMinute();
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
 				.Value.Should().Be(expectedPrice);
@@ -40,7 +40,7 @@ namespace PricePlanCalculator.Test.Model
 		public void BilledPer30Seconds(int hours, int minutes, int seconds, int expectedPrice)
 		{
 			var call = new VoiceCall(new TimeSpan(0, hours, minutes, seconds), TestCalls.LocalCall);
-			var plan = VoicePlan.BilledPer30Seconds().Costing(4);
+			var plan = VoicePlan.Costing(4).BilledPer30Seconds();
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
 				.Value.Should().Be(expectedPrice);
@@ -53,7 +53,7 @@ namespace PricePlanCalculator.Test.Model
 		public void BilledPerSecond(int hours, int minutes, int seconds, int expectedPrice)
 		{
 			var call = new VoiceCall(new TimeSpan(0, hours, minutes, seconds), TestCalls.LocalCall);
-			var plan = VoicePlan.BilledPerSecond().Costing(2);
+			var plan = VoicePlan.Costing(2).BilledPerSecond();
 			new VoiceTaxation()
 				.CalculatePrice(call, plan)
 				.Value.Should().Be(expectedPrice);

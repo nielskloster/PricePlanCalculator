@@ -2,11 +2,11 @@ namespace PricePlanCalculator.Models.Calls
 {
 	public class DataCall : Call
 	{
-		public long BytesUsed { get; private set; }
+		public long KBytesUsed { get; private set; }
 
-		public DataCall(long bytesUsed, CallInformation callInformation) : base(callInformation)
+		public DataCall(long kBytesUsed, CallInformation callInformation) : base(callInformation)
 		{
-			BytesUsed = bytesUsed;
+			KBytesUsed = kBytesUsed;
 		}
 	}
 }

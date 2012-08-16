@@ -4,41 +4,15 @@ namespace PricePlanCalculator.Models.Plans
 {
 	public class VoicePlan : Plan
 	{
-		#region FluentPlanSetup
-		public static VoicePlanIntermidate BilledPerMinute()
+		//Fluent setup
+		public static VoicePlanIntermidate Costing(int pricePerUnit)
 		{
-			return new VoicePlanIntermidate(VoicePlanBillingUnit.PerMinute);
+			return new VoicePlanIntermidate(pricePerUnit);
 		}
-
-		public static VoicePlanIntermidate BilledPer30Seconds()
-		{
-			return new VoicePlanIntermidate(VoicePlanBillingUnit.Per30Seconds);
-		}
-
-		public static VoicePlanIntermidate BilledPerSecond()
-		{
-			return new VoicePlanIntermidate(VoicePlanBillingUnit.PerSecond);
-		}
-
-		public class VoicePlanIntermidate
-		{
-			private readonly VoicePlanBillingUnit _billingUnit;
-
-			public VoicePlanIntermidate(VoicePlanBillingUnit billingUnit)
-			{
-				_billingUnit = billingUnit;
-			}
-
-			public VoicePlan Costing(int pricePerUnit)
-			{
-				return new VoicePlan(_billingUnit, new Price(pricePerUnit));
-			}
-		}
-		#endregion
 		
 		public VoicePlanBillingUnit BillingUnit { get; private set; }
 
-		private VoicePlan(VoicePlanBillingUnit billingUnit, Price pricePerUnit)
+		internal VoicePlan(VoicePlanBillingUnit billingUnit, Price pricePerUnit)
 			:base(pricePerUnit)
 		{
 			BillingUnit = billingUnit;
@@ -49,6 +23,31 @@ namespace PricePlanCalculator.Models.Plans
 			return string.Format("Voice plan costing {0} {1}", 
 				PricePerUnit, 
 				BillingUnit.ToString().ToPrettyCamelcase().ToLower());
+		}
+	}
+
+	public class VoicePlanIntermidate
+	{
+		private readonly Price _pricePerUnit;
+
+		public VoicePlanIntermidate(int pricePerUnit)
+		{
+			_pricePerUnit = new Price(pricePerUnit);
+		}
+
+		public VoicePlan BilledPerMinute()
+		{
+			return new VoicePlan(VoicePlanBillingUnit.PerMinute, _pricePerUnit);
+		}
+
+		public VoicePlan BilledPer30Seconds()
+		{
+			return new VoicePlan(VoicePlanBillingUnit.Per30Seconds, _pricePerUnit);
+		}
+
+		public VoicePlan BilledPerSecond()
+		{
+			return new VoicePlan(VoicePlanBillingUnit.PerSecond, _pricePerUnit);
 		}
 	}
 }
