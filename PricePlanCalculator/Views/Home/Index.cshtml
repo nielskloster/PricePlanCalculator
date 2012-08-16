@@ -2,7 +2,7 @@
 @using PricePlanCalculator.Models.Plans
 @model PricePlanCalculator.ViewModels.PriceCalculationViewModel
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Price Plan Calculator";
 }
 @section scripts
 {
@@ -12,16 +12,13 @@
     <section class="featured">
         <div class="content-wrapper">
             <hgroup class="title">
-                <h1>@ViewBag.Title</h1>
-				<h2>@ViewBag.Message</h2>
+                <h1>Calculate the cost of a call</h1>
                 <p>Voice plan 1:  @StandardPlans.VoicePlan1</p>
                 <p>Voice plan 2:  @StandardPlans.VoicePlan2</p>
                 <p>Text plan 1:  @StandardPlans.TextPlan1</p>
                 <p>Text plan 2:  @StandardPlans.TextPlan2</p>
             </hgroup>
             <p>
-				Calculate the cost of a call.
-                
                 @using (Html.BeginForm("CalculateCall", "Home"))
                 {
                    <span>Plan:</span>

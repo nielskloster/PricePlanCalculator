@@ -1,3 +1,4 @@
+using System;
 using PricePlanCalculator.Helpers;
 
 namespace PricePlanCalculator.Models.Plans
@@ -10,44 +11,19 @@ namespace PricePlanCalculator.Models.Plans
 			return new VoicePlanIntermidate(pricePerUnit);
 		}
 		
-		public VoicePlanBillingUnit BillingUnit { get; private set; }
+		public TimeSpan BillingFrequency { get; private set; }
 
-		internal VoicePlan(VoicePlanBillingUnit billingUnit, Price pricePerUnit)
+		internal VoicePlan(TimeSpan billingFrequency, Price pricePerUnit)
 			:base(pricePerUnit)
 		{
-			BillingUnit = billingUnit;
+			BillingFrequency = billingFrequency;
 		}
 
 		public override string ToString()
 		{
-			return string.Format("Voice plan costing {0} {1}", 
+			return string.Format("Voice plan costing {0} per {1}", 
 				PricePerUnit, 
-				BillingUnit.ToString().ToPrettyCamelcase().ToLower());
-		}
-	}
-
-	public class VoicePlanIntermidate
-	{
-		private readonly Price _pricePerUnit;
-
-		public VoicePlanIntermidate(int pricePerUnit)
-		{
-			_pricePerUnit = new Price(pricePerUnit);
-		}
-
-		public VoicePlan BilledPerMinute()
-		{
-			return new VoicePlan(VoicePlanBillingUnit.PerMinute, _pricePerUnit);
-		}
-
-		public VoicePlan BilledPer30Seconds()
-		{
-			return new VoicePlan(VoicePlanBillingUnit.Per30Seconds, _pricePerUnit);
-		}
-
-		public VoicePlan BilledPerSecond()
-		{
-			return new VoicePlan(VoicePlanBillingUnit.PerSecond, _pricePerUnit);
+				BillingFrequency.ToReadableString());
 		}
 	}
 }
