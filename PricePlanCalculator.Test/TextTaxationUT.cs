@@ -12,8 +12,7 @@ namespace PricePlanCalculator.Test
 		[Test]
 		public void LocalText()
 		{
-			var denmark = new Coutry("Denmark");
-			var geoInformation = new GeoInformation(denmark, denmark);
+			var geoInformation = new GeoInformation(Coutry.Denmark, Coutry.Denmark);
 			var call = new Text(geoInformation);
 			var plan = new TextPlan(new Price(4));
 			new TextTaxation()
@@ -24,7 +23,7 @@ namespace PricePlanCalculator.Test
 		[Test]
 		public void LongDistance()
 		{
-			var geoInformation = new GeoInformation(new Coutry("Uk"), new Coutry("Denmark"));
+			var geoInformation = new GeoInformation(Coutry.Uk, Coutry.Denmark);
 			var call = new Text(geoInformation);
 			var plan =new TextPlan(new Price(4));
 			new TextTaxation()

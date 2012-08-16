@@ -4,7 +4,7 @@ namespace PricePlanCalculator.Models
 	{
 		private string Name { get; set; }
 
-		public Coutry(string name)
+		private Coutry(string name)
 		{
 			Name = name;
 		}
@@ -15,5 +15,8 @@ namespace PricePlanCalculator.Models
 			if (ReferenceEquals(this, other)) return true;
 			return Equals(other.Name, Name);
 		}
+
+		public static readonly Coutry Denmark = new Coutry("Denmark");
+		public static readonly Coutry Uk = new Coutry("UK");
 	}
 }

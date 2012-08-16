@@ -14,10 +14,8 @@ namespace PricePlanCalculator.Test
 		[Test]
 		public void IsLocal()
 		{
-			var denmark = new Coutry("Denmark");
-			var uk = new Coutry("Uk");
-			new GeoInformation(denmark, denmark).IsLocal.Should().BeTrue();
-			new GeoInformation(denmark, uk).IsLocal.Should().BeFalse();
+			new GeoInformation(Coutry.Denmark, Coutry.Denmark).IsLocal.Should().BeTrue();
+			new GeoInformation(Coutry.Denmark, Coutry.Uk).IsLocal.Should().BeFalse();
 		}
 	}
 }
