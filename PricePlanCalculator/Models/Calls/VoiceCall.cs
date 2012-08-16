@@ -6,7 +6,7 @@ namespace PricePlanCalculator.Models.Calls
 	{
 		public TimeSpan Duration { get; private set; }
 
-		public VoiceCall(TimeSpan duration, GeoInformation geoInformation) : base(geoInformation)
+		public VoiceCall(TimeSpan duration, CallInformation callInformation) : base(callInformation)
 		{
 			Duration = duration;
 		}

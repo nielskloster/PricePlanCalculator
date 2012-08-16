@@ -1,13 +1,20 @@
-﻿namespace PricePlanCalculator.Models.Calls
+﻿using System;
+
+namespace PricePlanCalculator.Models.Calls
 {
 	public abstract class Call
 	{
-		private readonly GeoInformation _geoInformation;
-		protected Call(GeoInformation geoInformation)
+		public GeoInformation GeoInformation { get; private set; }
+		public DateTime CallStartTime { get; private set; }
+		public PhoneNumber PhoneNumber { get; private set; }
+
+		protected Call(CallInformation callInformation)
 		{
-			_geoInformation = geoInformation;
+			GeoInformation = callInformation.GeoInformation;
+			CallStartTime = callInformation.CallStartTime;
+			PhoneNumber = callInformation.PhoneNumber;
 		}
 
-		public bool IsLocal { get { return _geoInformation.IsLocal; } }
+		public bool IsLocal { get { return GeoInformation.IsLocal; } }
 	}
 }

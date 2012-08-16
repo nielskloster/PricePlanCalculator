@@ -16,6 +16,12 @@ namespace PricePlanCalculator.Controllers
 		private readonly ITaxation<VoiceCall, VoicePlan> _voiceTaxation;
 		private readonly ITaxation<TextCall, TextPlan> _textTaxation;
 
+		private readonly  CallInformation _standardHardcodedCall = 
+			new CallInformation(
+				new GeoInformation(Coutry.Denmark, Coutry.Denmark), 
+				new DateTime(2012,8,16), 
+				new PhoneNumber("26836012"));
+
 		public HomeController(ITaxation<VoiceCall, VoicePlan> voiceTaxation, ITaxation<TextCall, TextPlan> textTaxation )
 		{
 			_voiceTaxation = voiceTaxation;
@@ -36,9 +42,8 @@ namespace PricePlanCalculator.Controllers
 
 		private Price CalculatePrice(PriceCalculationViewModel priceCalculation)
 		{
-			var geoInformation = new GeoInformation(Coutry.Denmark, Coutry.Denmark);
-			var voiceCall = new VoiceCall(new TimeSpan(0, 0, priceCalculation.Units), geoInformation);
-			var textCall = new TextCall(geoInformation, priceCalculation.Units);
+			var voiceCall = new VoiceCall(new TimeSpan(0, 0, priceCalculation.Units), _standardHardcodedCall);
+			var textCall = new TextCall(priceCalculation.Units, _standardHardcodedCall);
 			switch (priceCalculation.CallType)
 			{
 				case CallType.VoicePlan1:

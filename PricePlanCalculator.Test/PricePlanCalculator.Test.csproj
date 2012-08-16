@@ -55,6 +55,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HomeControllerUT.cs" />
+    <Compile Include="PhoneNumberUT.cs" />
+    <Compile Include="TestCalls.cs" />
     <Compile Include="TextTaxationUT.cs" />
     <Compile Include="VoiceTaxationUT.cs" />
     <Compile Include="BootStrapUT.cs" />

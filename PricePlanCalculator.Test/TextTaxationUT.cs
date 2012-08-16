@@ -1,6 +1,5 @@
 using FluentAssertions;
 using NUnit.Framework;
-using PricePlanCalculator.Models;
 using PricePlanCalculator.Models.Calls;
 using PricePlanCalculator.Models.Plans;
 using PricePlanCalculator.Models.Taxations;
@@ -13,8 +12,7 @@ namespace PricePlanCalculator.Test
 		[Test]
 		public void LocalText()
 		{
-			var geoInformation = new GeoInformation(Coutry.Denmark, Coutry.Denmark);
-			var call = new TextCall(geoInformation, 2);
+			var call = new TextCall(2, TestCalls.LocalCall);
 			var plan = new TextPlan(4);
 			new TextTaxation()
 				.CalculatePrice(call, plan)
@@ -24,8 +22,7 @@ namespace PricePlanCalculator.Test
 		[Test]
 		public void LongDistance()
 		{
-			var geoInformation = new GeoInformation(Coutry.Uk, Coutry.Denmark);
-			var call = new TextCall(geoInformation, 2);
+			var call = new TextCall(2, TestCalls.LongDiscanceCall);
 			var plan =new TextPlan(4);
 			new TextTaxation()
 				.CalculatePrice(call, plan)

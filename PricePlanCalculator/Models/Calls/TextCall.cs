@@ -2,11 +2,11 @@ namespace PricePlanCalculator.Models.Calls
 {
 	public class TextCall : Call
 	{
-		public int Units { get; private set; }
+		public int Messages { get; private set; }
 
-		public TextCall(GeoInformation geoInformation, int units) : base(geoInformation)
+		public TextCall(int messages, CallInformation callInformation) : base(callInformation)
 		{
-			Units = units;
+			Messages = messages;
 		}
 	}
 }
