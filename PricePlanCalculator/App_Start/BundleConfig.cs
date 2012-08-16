@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace PricePlanCalculator
+namespace PricePlanCalculator.App_Start
 {
 	public class BundleConfig
 	{

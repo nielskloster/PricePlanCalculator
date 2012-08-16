@@ -1,7 +1,6 @@
-﻿using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
-namespace PricePlanCalculator
+namespace PricePlanCalculator.App_Start
 {
 	public class FilterConfig
 	{

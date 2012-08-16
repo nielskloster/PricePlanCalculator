@@ -2,7 +2,8 @@ using FluentAssertions;
 using NUnit.Framework;
 using PricePlanCalculator.Models;
 using PricePlanCalculator.Models.Plans;
-using Text = PricePlanCalculator.Models.Text;
+using PricePlanCalculator.Models.Taxations;
+using Text = PricePlanCalculator.Models.Calls.Text;
 
 namespace PricePlanCalculator.Test
 {

@@ -1,7 +1,7 @@
-using System;
+using PricePlanCalculator.Models.Calls;
 using PricePlanCalculator.Models.Plans;
 
-namespace PricePlanCalculator.Models
+namespace PricePlanCalculator.Models.Taxations
 {
 	public class TextTaxation : ITaxation<Text, TextPlan>
 	{

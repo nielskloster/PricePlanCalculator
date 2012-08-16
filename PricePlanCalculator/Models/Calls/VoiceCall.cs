@@ -1,6 +1,6 @@
 using System;
 
-namespace PricePlanCalculator.Models
+namespace PricePlanCalculator.Models.Calls
 {
 	public class VoiceCall : Call
 	{

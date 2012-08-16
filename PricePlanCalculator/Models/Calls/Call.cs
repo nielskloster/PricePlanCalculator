@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace PricePlanCalculator.Models
+﻿namespace PricePlanCalculator.Models.Calls
 {
 	public abstract class Call
 	{

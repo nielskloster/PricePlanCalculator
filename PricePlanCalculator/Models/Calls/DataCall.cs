@@ -1,4 +1,4 @@
-namespace PricePlanCalculator.Models
+namespace PricePlanCalculator.Models.Calls
 {
 	public class DataCall : Call
 	{
