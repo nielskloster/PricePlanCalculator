@@ -2,6 +2,7 @@ using System.Web.Mvc;
 using FluentAssertions;
 using NUnit.Framework;
 using PricePlanCalculator.Controllers;
+using PricePlanCalculator.Models;
 using PricePlanCalculator.ViewModels;
 
 namespace PricePlanCalculator.Test
@@ -21,11 +22,11 @@ namespace PricePlanCalculator.Test
 		[Test]
 		public void CalculateCall()
 		{
-			var viewModel = new PriceCalculationViewModel { CallType = CallType.VoicePlan1, Units = 2 };
+			var viewModel = new PriceCalculationViewModel { CallType = CallType.VoicePlan1, Units = 65 };
 			var controller = new HomeController();
 			var result = controller.CalculateCall(viewModel).As<PartialViewResult>();
 			result.Should().NotBeNull();
-			result.Model.As<int>().Should().Be(2);
+			result.Model.As<Price>().Value.Should().Be(20);
 		}
 	}
 }

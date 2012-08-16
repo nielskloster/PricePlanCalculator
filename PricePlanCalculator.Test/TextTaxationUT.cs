@@ -14,22 +14,22 @@ namespace PricePlanCalculator.Test
 		public void LocalText()
 		{
 			var geoInformation = new GeoInformation(Coutry.Denmark, Coutry.Denmark);
-			var call = new TextCall(geoInformation);
+			var call = new TextCall(geoInformation, 2);
 			var plan = new TextPlan(4);
 			new TextTaxation()
 				.CalculatePrice(call, plan)
-				.Value.Should().Be(4);
+				.Value.Should().Be(8);
 		}
 
 		[Test]
 		public void LongDistance()
 		{
 			var geoInformation = new GeoInformation(Coutry.Uk, Coutry.Denmark);
-			var call = new TextCall(geoInformation);
+			var call = new TextCall(geoInformation, 2);
 			var plan =new TextPlan(4);
 			new TextTaxation()
 				.CalculatePrice(call, plan)
-				.Value.Should().Be(6);
+				.Value.Should().Be(12);
 		}
 	}
 }

@@ -8,7 +8,7 @@ namespace PricePlanCalculator.Models.Taxations
 		public Price CalculatePrice(TextCall call, TextPlan plan)
 		{
 			var additionalCharge = call.IsLocal ? 1 : 1.5;
-			return additionalCharge * plan.PricePerUnit;
+			return call.Units * additionalCharge * plan.PricePerUnit;
 		}
 	}
 }
