@@ -15,9 +15,9 @@ namespace PricePlanCalculator.Controllers
 		}
 
 		[HttpPost]
-		public ActionResult CalculateCall()
+		public ActionResult CalculateCall(PriceCalculationViewModel priceCalculation)
 		{
-			return PartialView("CalculationResult", 10);
+			return PartialView("CalculationResult", priceCalculation.Units);
 		}
 	}
 }

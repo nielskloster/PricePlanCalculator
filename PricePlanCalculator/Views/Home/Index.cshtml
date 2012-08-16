@@ -19,8 +19,11 @@
                 
                 @using (Html.BeginForm("CalculateCall", "Home"))
                 {
+                    @Html.LabelFor(x=>x.CallType)
                     @Html.EnumDropDownListFor(x => x.CallType)
-                    <input type="submit" value="OK" />
+                    @Html.LabelFor(x => x.Units)
+                    @Html.EditorFor(x => x.Units)
+                    <input type="submit" value="Calculate" />
                 }
 			</p>
         </div>
@@ -30,9 +33,3 @@
     Result:</h3>
 <div id="result">
 </div>
-@*<ol class="round">
-    <li class="one">
-        <h5>
-            None yet</h5>
-        ..</li>
-</ol>*@ 

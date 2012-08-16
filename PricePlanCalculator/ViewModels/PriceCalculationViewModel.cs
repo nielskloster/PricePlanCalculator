@@ -1,13 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace PricePlanCalculator.ViewModels
+﻿namespace PricePlanCalculator.ViewModels
 {
 	public class PriceCalculationViewModel
 	{
 		public CallType CallType { get; set; }
+		public int Units { get; set; }
 	}
 
 	public enum CallType

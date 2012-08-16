@@ -8,7 +8,7 @@ using NUnit.Framework;
 namespace PricePlanCalculator.Test
 {
 	[TestFixture]
-	public class BootStrapTest
+	public class BootStrapUT
 	{
 		[Test]
 		public void FluentAssertionsAreWorking()

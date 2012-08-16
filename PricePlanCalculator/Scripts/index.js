@@ -1,6 +1,5 @@
 ﻿$(function () {
 	$('form').submit(function () {
-//		if ($(this).valid()) {
 			$.ajax({
 				url: this.action,
 				type: this.method,
@@ -9,7 +8,6 @@
 					$('#result').html(result);
 				}
 			});
-//		}
 		return false;
 	});
 });

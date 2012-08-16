@@ -38,8 +38,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\NUnit.2.6.1\lib\nunit.framework.dll</HintPath>
     </Reference>
+    <Reference Include="Rhino.Mocks">
+      <HintPath>..\packages\RhinoMocks.3.6.1\lib\net\Rhino.Mocks.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,9 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HomeControllerUT.cs" />
     <Compile Include="TextTaxationUT.cs" />
     <Compile Include="VoiceTaxationUT.cs" />
-    <Compile Include="BootStrapTest.cs" />
+    <Compile Include="BootStrapUT.cs" />
     <Compile Include="GeoInformationUT.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
