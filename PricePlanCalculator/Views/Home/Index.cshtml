@@ -24,9 +24,9 @@
                 
                 @using (Html.BeginForm("CalculateCall", "Home"))
                 {
-                    @Html.LabelFor(x=>x.CallType)
+                   <span>Plan:</span>
                     @Html.EnumDropDownListFor(x => x.CallType)
-                    @Html.LabelFor(x => x.Units)
+					<span>Units (Seconds/Kbytes/Messages):</span>
                     @Html.EditorFor(x => x.Units)
                     <input type="submit" value="Calculate" />
                 }

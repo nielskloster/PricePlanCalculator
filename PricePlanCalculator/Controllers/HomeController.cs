@@ -13,6 +13,15 @@ namespace PricePlanCalculator.Controllers
 {
 	public class HomeController : Controller
 	{
+		private readonly ITaxation<VoiceCall, VoicePlan> _voiceTaxation;
+		private readonly ITaxation<TextCall, TextPlan> _textTaxation;
+
+		public HomeController(ITaxation<VoiceCall, VoicePlan> voiceTaxation, ITaxation<TextCall, TextPlan> textTaxation )
+		{
+			_voiceTaxation = voiceTaxation;
+			_textTaxation = textTaxation;
+		}
+
 		public ActionResult Index()
 		{
 			return View(new PriceCalculationViewModel());
@@ -25,23 +34,21 @@ namespace PricePlanCalculator.Controllers
 			return PartialView("CalculationResult", price);
 		}
 
-		private static Price CalculatePrice(PriceCalculationViewModel priceCalculation)
+		private Price CalculatePrice(PriceCalculationViewModel priceCalculation)
 		{
-			var voiceTaxation = new VoiceTaxation();
-			var textTaxation = new TextTaxation();
 			var geoInformation = new GeoInformation(Coutry.Denmark, Coutry.Denmark);
 			var voiceCall = new VoiceCall(new TimeSpan(0, 0, priceCalculation.Units), geoInformation);
 			var textCall = new TextCall(geoInformation, priceCalculation.Units);
 			switch (priceCalculation.CallType)
 			{
 				case CallType.VoicePlan1:
-					return voiceTaxation.CalculatePrice(voiceCall, StandardPlans.VoicePlan1);
+					return _voiceTaxation.CalculatePrice(voiceCall, StandardPlans.VoicePlan1);
 				case CallType.VoicePlan2:
-					return voiceTaxation.CalculatePrice(voiceCall, StandardPlans.VoicePlan2);
+					return _voiceTaxation.CalculatePrice(voiceCall, StandardPlans.VoicePlan2);
 				case CallType.TextPlan1:
-					return textTaxation.CalculatePrice(textCall, StandardPlans.TextPlan1);
+					return _textTaxation.CalculatePrice(textCall, StandardPlans.TextPlan1);
 				case CallType.TextPlan2:
-					return textTaxation.CalculatePrice(textCall, StandardPlans.TextPlan2);
+					return _textTaxation.CalculatePrice(textCall, StandardPlans.TextPlan2);
 				default:
 					throw new ArgumentOutOfRangeException();
 			}
