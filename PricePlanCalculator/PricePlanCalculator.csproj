@@ -135,9 +135,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\CastleWindsorControllerFactory.cs" />
+    <Compile Include="Infrastructure\CastleWindsorControllerFactory.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
-    <Compile Include="Helpers\WindsorInstaller.cs" />
+    <Compile Include="Infrastructure\TaxationInstaller.cs" />
+    <Compile Include="Infrastructure\ControllerInstaller.cs" />
     <Compile Include="Models\Calls\Call.cs" />
     <Compile Include="Models\Calls\CallInformation.cs" />
     <Compile Include="Models\Calls\PhoneNumber.cs" />

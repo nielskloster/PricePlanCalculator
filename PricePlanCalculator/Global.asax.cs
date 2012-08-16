@@ -6,6 +6,7 @@ using Castle.Windsor;
 using Castle.Windsor.Installer;
 using PricePlanCalculator.App_Start;
 using PricePlanCalculator.Helpers;
+using PricePlanCalculator.Infrastructure;
 
 namespace PricePlanCalculator
 {

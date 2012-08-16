@@ -1,5 +1,3 @@
-using System;
-
 namespace PricePlanCalculator.Models.Calls
 {
 	public class DataCall : Call

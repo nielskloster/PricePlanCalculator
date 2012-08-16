@@ -1,4 +1,6 @@
 using System.Web.Mvc;
+using Castle.Windsor;
+using Castle.Windsor.Installer;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
@@ -9,11 +11,18 @@ using PricePlanCalculator.Models.Plans;
 using PricePlanCalculator.Models.Taxations;
 using PricePlanCalculator.ViewModels;
 
-namespace PricePlanCalculator.Test
+namespace PricePlanCalculator.Test.Infrastructure
 {
 	[TestFixture]
 	public class HomeControllerUT
 	{
+		[Test]
+		public void ControllerDepenenciesAreSatisfied()
+		{
+			var container = new WindsorContainer().Install(FromAssembly.Containing<HomeController>());
+			container.Resolve<HomeController>();
+		}
+
 		[Test]
 		public void Index()
 		{

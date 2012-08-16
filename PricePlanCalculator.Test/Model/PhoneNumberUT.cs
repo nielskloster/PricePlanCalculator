@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using PricePlanCalculator.Models.Calls;
 
-namespace PricePlanCalculator.Test
+namespace PricePlanCalculator.Test.Model
 {
 	
 	[TestFixture]

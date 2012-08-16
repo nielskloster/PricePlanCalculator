@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace PricePlanCalculator.Test
+namespace PricePlanCalculator.Test.Infrastructure
 {
 	[TestFixture]
 	public class BootStrapUT
