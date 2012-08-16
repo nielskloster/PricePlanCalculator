@@ -29,5 +29,27 @@ namespace PricePlanCalculator.Helpers
 				items
 				);
 		}
+
+		public static string ToPrettyCamelcase(this string value)
+		{
+			return new string(CharToPrettyCamelcase(value).ToArray());
+		}
+
+		private static IEnumerable<char> CharToPrettyCamelcase(IEnumerable<char> value)
+		{
+			if (!value.Any())
+				yield break;
+			char last = ' ';
+			foreach (var character in value)
+			{
+				if (char.IsUpper(character) && last != ' ' && !char.IsUpper(last))
+				{
+					yield return ' ';
+				}
+				yield return character;
+				last = character;
+			}
+		}
+
 	}
 }

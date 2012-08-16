@@ -21,7 +21,7 @@ namespace PricePlanCalculator.Test
 		[Test]
 		public void CalculateCall()
 		{
-			var viewModel = new PriceCalculationViewModel { CallType = CallType.Voice, Units = 2 };
+			var viewModel = new PriceCalculationViewModel { CallType = CallType.VoicePlan1, Units = 2 };
 			var controller = new HomeController();
 			var result = controller.CalculateCall(viewModel).As<PartialViewResult>();
 			result.Should().NotBeNull();

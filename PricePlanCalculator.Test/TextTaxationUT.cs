@@ -1,9 +1,9 @@
 using FluentAssertions;
 using NUnit.Framework;
 using PricePlanCalculator.Models;
+using PricePlanCalculator.Models.Calls;
 using PricePlanCalculator.Models.Plans;
 using PricePlanCalculator.Models.Taxations;
-using Text = PricePlanCalculator.Models.Calls.Text;
 
 namespace PricePlanCalculator.Test
 {
@@ -14,8 +14,8 @@ namespace PricePlanCalculator.Test
 		public void LocalText()
 		{
 			var geoInformation = new GeoInformation(Coutry.Denmark, Coutry.Denmark);
-			var call = new Text(geoInformation);
-			var plan = new TextPlan(new Price(4));
+			var call = new TextCall(geoInformation);
+			var plan = new TextPlan(4);
 			new TextTaxation()
 				.CalculatePrice(call, plan)
 				.Value.Should().Be(4);
@@ -25,8 +25,8 @@ namespace PricePlanCalculator.Test
 		public void LongDistance()
 		{
 			var geoInformation = new GeoInformation(Coutry.Uk, Coutry.Denmark);
-			var call = new Text(geoInformation);
-			var plan =new TextPlan(new Price(4));
+			var call = new TextCall(geoInformation);
+			var plan =new TextPlan(4);
 			new TextTaxation()
 				.CalculatePrice(call, plan)
 				.Value.Should().Be(6);

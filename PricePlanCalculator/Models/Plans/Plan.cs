@@ -9,11 +9,4 @@ namespace PricePlanCalculator.Models.Plans
 			PricePerUnit = pricePerUnit;
 		}
 	}
-
-	public class TextPlan : Plan
-	{
-		public TextPlan(Price pricePerUnit) : base(pricePerUnit)
-		{
-		}
-	}
 }

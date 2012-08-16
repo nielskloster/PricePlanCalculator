@@ -23,5 +23,10 @@ namespace PricePlanCalculator.Models
 		{
 			return new Price((int)(p1 * p2.Value));
 		}
+
+		public override string ToString()
+		{
+			return Value + " kr.";
+		}
 	}
 }

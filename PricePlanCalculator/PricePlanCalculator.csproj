@@ -134,11 +134,12 @@
     <Compile Include="Models\Coutry.cs" />
     <Compile Include="Models\Calls\DataCall.cs" />
     <Compile Include="Models\GeoInformation.cs" />
+    <Compile Include="Models\Plans\TextPlan.cs" />
     <Compile Include="Models\Taxations\ITaxation.cs" />
     <Compile Include="Models\Plans\Plan.cs" />
     <Compile Include="Models\Plans\VoicePlanBillingUnit.cs" />
     <Compile Include="Models\Price.cs" />
-    <Compile Include="Models\Calls\Text.cs" />
+    <Compile Include="Models\Calls\TextCall.cs" />
     <Compile Include="Models\Taxations\TextTaxation.cs" />
     <Compile Include="Models\Calls\VoiceCall.cs" />
     <Compile Include="Models\Taxations\VoiceTaxation.cs" />

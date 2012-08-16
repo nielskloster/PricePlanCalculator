@@ -1,3 +1,5 @@
+using PricePlanCalculator.Helpers;
+
 namespace PricePlanCalculator.Models.Plans
 {
 	public class VoicePlan : Plan
@@ -40,6 +42,13 @@ namespace PricePlanCalculator.Models.Plans
 			:base(pricePerUnit)
 		{
 			BillingUnit = billingUnit;
+		}
+
+		public override string ToString()
+		{
+			return string.Format("Voice plan costing {0} {1}", 
+				PricePerUnit, 
+				BillingUnit.ToString().ToPrettyCamelcase().ToLower());
 		}
 	}
 }
