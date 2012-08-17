@@ -140,6 +140,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\UsefullExtensions.cs" />
     <Compile Include="Infrastructure\CastleWindsorControllerFactory.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Infrastructure\TaxationInstaller.cs" />
@@ -154,10 +155,12 @@
     <Compile Include="Models\Plans\StandardPlans.cs" />
     <Compile Include="Models\Plans\TextPlan.cs" />
     <Compile Include="Models\Plans\VoicePlanIntermidate.cs" />
+    <Compile Include="Models\Taxations\DataTaxation.cs" />
     <Compile Include="Models\Taxations\ITaxation.cs" />
     <Compile Include="Models\Plans\Plan.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\Calls\TextCall.cs" />
+    <Compile Include="Models\Taxations\Taxation.cs" />
     <Compile Include="Models\Taxations\TextTaxation.cs" />
     <Compile Include="Models\Calls\VoiceCall.cs" />
     <Compile Include="Models\Taxations\VoiceTaxation.cs" />

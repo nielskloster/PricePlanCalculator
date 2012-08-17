@@ -8,5 +8,6 @@ namespace PricePlanCalculator.Models.Plans
 		{
 			BillingFrequencyBytes = billingFrequencyBytes;
 		}
+
 	}
 }
