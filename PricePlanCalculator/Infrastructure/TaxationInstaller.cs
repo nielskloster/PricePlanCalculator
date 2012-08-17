@@ -13,6 +13,7 @@ namespace PricePlanCalculator.Infrastructure
 		{
 			container.Register(Component.For<ITaxation<VoiceCall, VoicePlan>>().ImplementedBy<VoiceTaxation>());
 			container.Register(Component.For<ITaxation<TextCall, TextPlan>>().ImplementedBy<TextTaxation>());
+			container.Register(Component.For<ITaxation<DataCall, DataPlan>>().ImplementedBy<DataTaxation>());
 		}
 	}
 }

@@ -2,7 +2,7 @@
 {
 	public class PriceCalculationViewModel
 	{
-		public CallType CallType { get; set; }
+		public Plan Plan { get; set; }
 		public int Units { get; set; }
 	}
 }

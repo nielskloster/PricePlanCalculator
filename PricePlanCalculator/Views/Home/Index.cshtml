@@ -15,6 +15,8 @@
                 <h1>Calculate the cost of a call</h1>
                 <p>Voice plan 1:  @StandardPlans.VoicePlan1</p>
                 <p>Voice plan 2:  @StandardPlans.VoicePlan2</p>
+                <p>Data plan 1:  @StandardPlans.DataPlan1</p>
+                <p>Data plan 2:  @StandardPlans.DataPlan2</p>
                 <p>Text plan 1:  @StandardPlans.TextPlan1</p>
                 <p>Text plan 2:  @StandardPlans.TextPlan2</p>
             </hgroup>
@@ -22,7 +24,7 @@
                 @using (Html.BeginForm("CalculateCall", "Home"))
                 {
                    <span>Plan:</span>
-                    @Html.EnumDropDownListFor(x => x.CallType)
+                    @Html.EnumDropDownListFor(x => x.Plan)
 					<span>Units (Seconds/Kbytes/Messages):</span>
                     @Html.EditorFor(x => x.Units)
                     <input type="submit" value="Calculate" />

@@ -15,7 +15,7 @@ namespace PricePlanCalculator.Test.Model
 		public void LongDistanceCall()
 		{
 			var call = new DataCall(2.Megabyte(), TestCalls.LongDiscanceCall);
-			var plan = new DataPlan(new Price(20), 1.Megabyte());
+			var plan = new DataPlan(20, 1.Megabyte());
 			new DataTaxation().CalculatePrice(call, plan).Value.Should().Be(60);
 		}
 
@@ -33,7 +33,7 @@ namespace PricePlanCalculator.Test.Model
 		private static void AssertLocalCall(long kBytesUsed, long billingFrequencyBytes, int expectedPrice)
 		{
 			var call = new DataCall(kBytesUsed, TestCalls.LocalCall);
-			var plan = new DataPlan(new Price(20), billingFrequencyBytes);
+			var plan = new DataPlan(20, billingFrequencyBytes);
 			new DataTaxation().CalculatePrice(call, plan).Value.Should().Be(expectedPrice);
 		}
 	}
