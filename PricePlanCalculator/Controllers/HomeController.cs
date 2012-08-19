@@ -9,7 +9,6 @@ using PricePlanCalculator.Models.Calls;
 using PricePlanCalculator.Models.Plans;
 using PricePlanCalculator.Models.Taxations;
 using PricePlanCalculator.ViewModels;
-using Plan = PricePlanCalculator.ViewModels.Plan;
 
 namespace PricePlanCalculator.Controllers
 {
@@ -53,19 +52,19 @@ namespace PricePlanCalculator.Controllers
 			var voiceCall = new VoiceCall(new TimeSpan(0, 0, priceCalculation.Units), _standardHardcodedCall);
 			var textCall = new TextCall(priceCalculation.Units, _standardHardcodedCall);
 			var dataCall = new DataCall(priceCalculation.Units.KByte(), _standardHardcodedCall);
-			switch (priceCalculation.Plan)
+			switch (priceCalculation.PlanType)
 			{
-				case Plan.VoicePlan1:
+				case PlanType.VoicePlan1:
 					return _voiceTaxation.CalculatePrice(voiceCall, StandardPlans.VoicePlan1);
-				case Plan.VoicePlan2:
+				case PlanType.VoicePlan2:
 					return _voiceTaxation.CalculatePrice(voiceCall, StandardPlans.VoicePlan2);
-				case Plan.DataPlan1:
+				case PlanType.DataPlan1:
 					return _dataTaxation.CalculatePrice(dataCall, StandardPlans.DataPlan1);
-				case Plan.DataPlan2:
+				case PlanType.DataPlan2:
 					return _dataTaxation.CalculatePrice(dataCall, StandardPlans.DataPlan2);
-				case Plan.TextPlan1:
+				case PlanType.TextPlan1:
 					return _textTaxation.CalculatePrice(textCall, StandardPlans.TextPlan1);
-				case Plan.TextPlan2:
+				case PlanType.TextPlan2:
 					return _textTaxation.CalculatePrice(textCall, StandardPlans.TextPlan2);
 				default:
 					throw new ArgumentOutOfRangeException();

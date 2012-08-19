@@ -10,7 +10,6 @@ using PricePlanCalculator.Models.Calls;
 using PricePlanCalculator.Models.Plans;
 using PricePlanCalculator.Models.Taxations;
 using PricePlanCalculator.ViewModels;
-using Plan = PricePlanCalculator.ViewModels.Plan;
 
 namespace PricePlanCalculator.Test.Infrastructure
 {
@@ -43,7 +42,7 @@ namespace PricePlanCalculator.Test.Infrastructure
 			voiceTaxation.Setup(x => x.CalculatePrice(It.IsAny<VoiceCall>(), It.IsAny<VoicePlan>())).Returns(new Price(10));
 			var textTaxation = new Mock<ITaxation<TextCall, TextPlan>>();
 			var dataTaxation = new Mock<ITaxation<DataCall, DataPlan>>();
-			var viewModel = new PriceCalculationViewModel { Plan = Plan.VoicePlan1, Units = 65 };
+			var viewModel = new PriceCalculationViewModel { PlanType = PlanType.VoicePlan1, Units = 65 };
 			var controller = new HomeController(voiceTaxation.Object, textTaxation.Object, dataTaxation.Object);
 			var result = controller.CalculateCall(viewModel).As<PartialViewResult>();
 			result.Should().NotBeNull();

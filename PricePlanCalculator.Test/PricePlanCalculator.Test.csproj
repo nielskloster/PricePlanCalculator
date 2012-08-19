@@ -65,6 +65,7 @@
     <Compile Include="Infrastructure\HomeControllerUT.cs" />
     <Compile Include="Model\DataTaxationUT.cs" />
     <Compile Include="Model\PhoneNumberUT.cs" />
+    <Compile Include="Model\StandardPlansUT.cs" />
     <Compile Include="TestCalls.cs" />
     <Compile Include="Model\TextTaxationUT.cs" />
     <Compile Include="Model\VoiceTaxationUT.cs" />

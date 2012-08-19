@@ -1,6 +1,6 @@
 namespace PricePlanCalculator.ViewModels
 {
-	public enum Plan
+	public enum PlanType
 	{
 		VoicePlan1,
 		VoicePlan2,

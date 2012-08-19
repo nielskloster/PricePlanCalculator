@@ -14,7 +14,7 @@ namespace PricePlanCalculator.Models.Calls
 			Check.AgainstNull(callInformation, "Please provide call information.");
 			GeoInformation = callInformation.GeoInformation;
 			CallStartTime = callInformation.CallStartTime;
-			PhoneNumber = callInformation.PhoneNumber;
+			PhoneNumber = callInformation.SourcePhoneNumber;
 		}
 
 		public bool IsLocal { get { return GeoInformation.IsLocal; } }
