@@ -1,4 +1,5 @@
 ﻿using System;
+using PricePlanCalculator.Helpers;
 
 namespace PricePlanCalculator.Models.Calls
 {
@@ -10,6 +11,7 @@ namespace PricePlanCalculator.Models.Calls
 
 		protected Call(CallInformation callInformation)
 		{
+			Check.AgainstNull(callInformation, "Please provide call information.");
 			GeoInformation = callInformation.GeoInformation;
 			CallStartTime = callInformation.CallStartTime;
 			PhoneNumber = callInformation.PhoneNumber;

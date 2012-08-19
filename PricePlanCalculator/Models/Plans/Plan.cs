@@ -1,3 +1,5 @@
+using PricePlanCalculator.Helpers;
+
 namespace PricePlanCalculator.Models.Plans
 {
 	public abstract class Plan
@@ -6,6 +8,7 @@ namespace PricePlanCalculator.Models.Plans
 
 		protected Plan(Price pricePerUnit)
 		{
+			Check.AgainstNull(pricePerUnit, "Please provide a price for this plan.");
 			PricePerUnit = pricePerUnit;
 		}
 	}

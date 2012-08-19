@@ -22,11 +22,6 @@ namespace PricePlanCalculator.Helpers
 			return kByte*1024;
 		}
 
-		public static long KByte(this long kByte)
-		{
-			return kByte * 1024;
-		}
-
 		public static long Megabyte(this int megabyte)
 		{
 			return megabyte * 1024 * 1024;
@@ -34,10 +29,10 @@ namespace PricePlanCalculator.Helpers
 
 		public static string ToFormattedDataSize(this long bytes)
 		{
-			string[] suf = { "B", "KB", "MB", "GB", "TB", "PB" };
+			string[] suffix = { "B", "KB", "MB", "GB", "TB", "PB" };
 			var place = Convert.ToInt32(Math.Floor(Math.Log(bytes, 1024)));
-			var num = Math.Round(bytes / Math.Pow(1024, place), 1);
-			return num.ToString() + suf[place];
+			var number = Math.Round(bytes / Math.Pow(1024, place), 1);
+			return number + suffix[place];
 		}
 	}
 }

@@ -10,12 +10,14 @@ namespace PricePlanCalculator.Test
 			new CallInformation(
 				new GeoInformation(Coutry.Denmark, Coutry.Denmark),
 				new DateTime(2012, 8, 16),
-				new PhoneNumber("26836012"));
+				new PhoneNumber("26836012"),
+				new PhoneNumber("26836013"));
 
 		public static readonly CallInformation LongDiscanceCall =
 			new CallInformation(
 				new GeoInformation(Coutry.Denmark, Coutry.Uk),
 				new DateTime(2012, 8, 16),
-				new PhoneNumber("26836012"));
+				new PhoneNumber("26836012"),
+				new PhoneNumber("26836013"));
 	}
 }

@@ -1,3 +1,4 @@
+using PricePlanCalculator.Helpers;
 using PricePlanCalculator.Models.Calls;
 using PricePlanCalculator.Models.Plans;
 
@@ -9,6 +10,8 @@ namespace PricePlanCalculator.Models.Taxations
 
 		public Price CalculatePrice(TCall call, TPlan plan)
 		{
+			Check.AgainstNull(call, "Please provide a call to calculate.");
+			Check.AgainstNull(plan, "Please provide a plan for the calculation.");
 			if (call.IsLocal)
 				return CalculateBasicPrice(call, plan);
 			return LongDistancePriceFactor*CalculateBasicPrice(call, plan);

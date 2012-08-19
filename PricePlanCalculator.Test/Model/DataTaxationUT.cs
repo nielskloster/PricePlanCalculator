@@ -28,9 +28,10 @@ namespace PricePlanCalculator.Test.Model
 			AssertLocalCall(1025.KByte(), 1.Megabyte(), 20);
 			AssertLocalCall(2047.KByte(), 1.Megabyte(), 20);
 			AssertLocalCall(2048.KByte(), 1.Megabyte(), 40);
+			AssertLocalCall(349833.KByte(), 1.Megabyte(), 6820);
 		}
 
-		private static void AssertLocalCall(long kBytesUsed, long billingFrequencyBytes, int expectedPrice)
+		private static void AssertLocalCall(long kBytesUsed, long billingFrequencyBytes, long expectedPrice)
 		{
 			var call = new DataCall(kBytesUsed, TestCalls.LocalCall);
 			var plan = new DataPlan(20, billingFrequencyBytes);

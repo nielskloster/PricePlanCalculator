@@ -1,3 +1,5 @@
+using PricePlanCalculator.Helpers;
+
 namespace PricePlanCalculator.Models
 {
 	public class Coutry
@@ -6,6 +8,7 @@ namespace PricePlanCalculator.Models
 
 		private Coutry(string name)
 		{
+			Check.AgainstNull(name, "A country should have a name.");
 			Name = name;
 		}
 
