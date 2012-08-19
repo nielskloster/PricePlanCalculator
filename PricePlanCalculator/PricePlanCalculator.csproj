@@ -167,6 +167,8 @@
     <Compile Include="Models\Taxations\VoiceTaxation.cs" />
     <Compile Include="Models\Plans\VoicePlan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IPriceCalculationService.cs" />
+    <Compile Include="Services\PriceCalculationService.cs" />
     <Compile Include="ViewModels\PlanType.cs" />
     <Compile Include="ViewModels\PriceCalculationViewModel.cs" />
   </ItemGroup>
@@ -252,7 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

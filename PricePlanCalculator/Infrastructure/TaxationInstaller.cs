@@ -4,6 +4,7 @@ using Castle.Windsor;
 using PricePlanCalculator.Models.Calls;
 using PricePlanCalculator.Models.Plans;
 using PricePlanCalculator.Models.Taxations;
+using PricePlanCalculator.Services;
 
 namespace PricePlanCalculator.Infrastructure
 {
@@ -14,6 +15,7 @@ namespace PricePlanCalculator.Infrastructure
 			container.Register(Component.For<ITaxation<VoiceCall, VoicePlan>>().ImplementedBy<VoiceTaxation>());
 			container.Register(Component.For<ITaxation<TextCall, TextPlan>>().ImplementedBy<TextTaxation>());
 			container.Register(Component.For<ITaxation<DataCall, DataPlan>>().ImplementedBy<DataTaxation>());
+			container.Register(Component.For<IPriceCalculationService>().ImplementedBy<PriceCalculationService>());
 		}
 	}
 }
