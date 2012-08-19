@@ -148,7 +148,7 @@
     <Compile Include="Infrastructure\ControllerInstaller.cs" />
     <Compile Include="Models\Calls\Call.cs" />
     <Compile Include="Models\Calls\CallInformation.cs" />
-    <Compile Include="Models\Calls\PhoneNumber.cs" />
+    <Compile Include="Models\PhoneNumber.cs" />
     <Compile Include="Models\Coutry.cs" />
     <Compile Include="Models\Calls\DataCall.cs" />
     <Compile Include="Models\GeoInformation.cs" />

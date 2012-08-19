@@ -1,3 +1,5 @@
+using PricePlanCalculator.Helpers;
+
 namespace PricePlanCalculator.Models
 {
 	public class Price
@@ -6,6 +8,7 @@ namespace PricePlanCalculator.Models
 
 		public Price(long value)
 		{
+			Check.That(() => value >= 0, "A price cannot be negative.");
 			Value = value;
 		}
 

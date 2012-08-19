@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using PricePlanCalculator.Models;
 using PricePlanCalculator.Models.Calls;
 
 namespace PricePlanCalculator.Test.Model

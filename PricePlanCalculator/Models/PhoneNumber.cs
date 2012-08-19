@@ -1,7 +1,7 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace PricePlanCalculator.Models.Calls
+namespace PricePlanCalculator.Models
 {
 	public class PhoneNumber
 	{
